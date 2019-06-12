@@ -1,3 +1,5 @@
+const urlNeeded = "http://35.242.137.2:8080/workoutTracker-1.0/api/users/";
+
 function requestData(url, method, body) {
     return new Promise((resolve, reject) => {
         const req = new XMLHttpRequest();
@@ -25,7 +27,11 @@ function displayData(request) {
 }
 
 function displayUsers() {
-    requestData("http://35.242.137.2:8080/workoutTracker-1.0/api/users/", "GET", "");
+    requestData(urlNeeded, "GET", "");
+}
+
+function postData() {
+    
 }
 
 displayUsers();
