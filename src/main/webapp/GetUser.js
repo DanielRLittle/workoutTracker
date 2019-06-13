@@ -1,4 +1,8 @@
 const getUserPage = "http://35.242.137.2:8080/workoutTracker-1.0/userPage.html"
+const getLoginPage = "http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html"
+    
+let output = window.sessionStorage.getItem("User");
+output = JSON.parse(output);
 
 function getUser() {
     let input1 = document.getElementById("input1").value;
@@ -17,4 +21,23 @@ function getUser() {
             }
         }
     });
+}
+
+function displayUser() {
+    document.getElementById("returningID").innerHTML = output.id;
+    document.getElementById("firstName").innerHTML = output.firstName;
+    document.getElementById("lastName").innerHTML = output.lastName;
+    window.sessionStorage.removeItem("User");
+
+}
+
+function checkUser() {
+    if (!output) {
+        window.location.href = getLoginPage;
+    }
+}
+
+function checkAndDisplay() {
+    checkUser();
+    displayData();
 }
