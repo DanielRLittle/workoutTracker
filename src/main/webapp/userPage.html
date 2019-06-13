@@ -1,12 +1,40 @@
 <html>
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
-	</head>
-	<body class="bg-dark">
-    </body>
-    
-    <script src="fetchingData.js"></script>
-    <script src="GetUser.js"></script>
+    <link rel="stylesheet" type=text/css href="buttons.css">
+    <link rel="stylesheet" type=text/css href="textEditing.css">
+    <link rel="stylesheet" type=text/css href="tableFormat.css">
+</head>
+
+<body class="bg-dark">
+    <div align="center">
+        <button class="largeButton btn btn-outline-dark bg-info" type="button" onclick="checkAndDisplay()">Reveal User Info</button>
+        <button class="largeButton btn btn-outline-dark bg-info" type="button" onclick="hideData()">Hide User Info</button>
+        <button class="largeButton btn btn-outline-dark bg-info" type="button" onclick="">Update Username</button>
+    </div>
+    <div>
+        <table align="center" id="userTable" class="table table-dark mediumText">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" id="returningID"></th>
+                    <td id="firstName"></td>
+                    <td id="lastName"></td>
+                </tr>
+        </table>
+    </div>
+</body>
+
+<script src="fetchingData.js"></script>
+<script src="GetUser.js"></script>
+
 </html>
