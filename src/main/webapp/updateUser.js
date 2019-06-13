@@ -9,7 +9,7 @@ function updateUser() {
     if (input1 !== "" && input2 !== "") {
         output.firstName = input1;
         output.lastName = input2;
-        requestData(urlNeeded, "PUT", output);
+        requestData(urlById, "PUT", output);
     }
     else {
         console.log("Can't change to a blank name!");
