@@ -27,8 +27,7 @@ function displayUser() {
     document.getElementById("returningID").innerHTML = output.id;
     document.getElementById("firstName").innerHTML = output.firstName;
     document.getElementById("lastName").innerHTML = output.lastName;
-    window.sessionStorage.removeItem("User");
-
+    // window.sessionStorage.removeItem("User");
 }
 
 function checkUser() {
@@ -39,6 +38,12 @@ function checkUser() {
 
 function checkAndDisplay() {
     checkUser();
-    
+
     displayUser();
+}
+
+function hideData() {
+    document.getElementById("returningID").innerHTML = "";
+    document.getElementById("firstName").innerHTML = "";
+    document.getElementById("lastName").innerHTML = "";
 }
