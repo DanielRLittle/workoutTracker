@@ -24,7 +24,7 @@ function getUser() {
 }
 
 function displayUser() {
-    document.getElementById("returningID").innerHTML = output.id;
+    document.getElementById("returningID").innerText = output.id;
     document.getElementById("firstName").innerHTML = output.firstName;
     document.getElementById("lastName").innerHTML = output.lastName;
     window.sessionStorage.removeItem("User");
