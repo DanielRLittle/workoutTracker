@@ -24,6 +24,7 @@ function getUser() {
 }
 
 function displayUser() {
+    document.getElementById("userTable").style.display="block";
     document.getElementById("returningID").innerHTML = output.id;
     document.getElementById("firstName").innerHTML = output.firstName;
     document.getElementById("lastName").innerHTML = output.lastName;
@@ -43,7 +44,5 @@ function checkAndDisplay() {
 }
 
 function hideData() {
-    document.getElementById("returningID").innerHTML = "";
-    document.getElementById("firstName").innerHTML = "";
-    document.getElementById("lastName").innerHTML = "";
+    document.getElementById("userTable").style.display="none";
 }
