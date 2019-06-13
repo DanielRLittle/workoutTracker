@@ -7,6 +7,8 @@ function getUser() {
         let data = JSON.parse(x.responseText);
         console.log(data);
         for(let ele of data) {
+            console.log(ele.firstName);
+            console.log(ele.lastName);
             if(ele.firstName === input1 && ele.lastName === input2) {
                 console.log(ele.firstName);
                 console.log(ele.lastName);
