@@ -44,5 +44,7 @@ function checkAndDisplay() {
 }
 
 function hideData() {
-    document.getElementById("userTable").style.display="none";
+    document.getElementById("returningID").innerHTML = "";
+    document.getElementById("firstName").innerHTML = "";
+    document.getElementById("lastName").innerHTML = "";
 }
