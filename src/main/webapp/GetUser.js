@@ -1,4 +1,4 @@
-const getUserPage = "http://35.242.137.2:8080/workoutTracker-1.0/GetUser.html"
+const getUserPage = "http://35.242.137.2:8080/workoutTracker-1.0/userPage.html"
 
 function getUser() {
     let input1 = document.getElementById("input1").value;
