@@ -34,9 +34,9 @@ public class UserRepoDB implements UserRepo{
 	}
 
 	@Transactional(value = TxType.REQUIRED)
-	public User updateFirstName(int id, User newUser) {
+	public User updateUser(int id, User newUser) {
 		User user = readUser(id);
-		user.setFirstName(newUser.getFirstName());
+		user.setAll(newUser);
 		return user;
 	}
 
@@ -44,9 +44,4 @@ public class UserRepoDB implements UserRepo{
 		em.remove(readUser(id));
 	}
 
-	public User updateLastName(int id, User newUser) {
-		User user = readUser(id);
-		user.setLastName(newUser.getLastName());
-		return user;
-	}
 }

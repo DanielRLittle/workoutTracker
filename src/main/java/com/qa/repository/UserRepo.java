@@ -12,9 +12,7 @@ public interface UserRepo {
 	
 	public List<User> readAll();
 	
-	public User updateFirstName(int id, User user);
-	
-	public User updateLastName(int id, User user);
+	public User updateUser(int id, User newUser);
 	
 	public void deleteUser(int id);
 }
