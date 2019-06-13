@@ -39,5 +39,6 @@ function checkUser() {
 
 function checkAndDisplay() {
     checkUser();
+    
     displayUser();
 }
