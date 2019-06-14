@@ -11,10 +11,11 @@
 
 <body class="bg-dark">
     <div align="center">
-		<button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="mainMenu()">Main Menu</button>
-        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="checkAndDisplay()">Reveal User Info</button>
-        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="hideData()">Hide User Info</button>
-        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="updateUserPage()">Update Username</button>
+		<button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="mainMenu();">Main Menu</button>
+        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="checkAndDisplay();">Reveal User Info</button>
+        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="hideData();">Hide User Info</button>
+        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="updateUserPage();">Update Username</button>
+        <button type="button" class="fatButton btn btn-outline-dark bg-danger" onclick="deleteUser();">Delete User</button>
     </div>
     <div>
         <table align="center" id="userTable" class="table table-dark mediumText">
@@ -38,5 +39,6 @@
 <script src="fetchingData.js"></script>
 <script src="GetUser.js"></script>
 <script src="extraButtonFunctions.js"></script>
+<script src="deleteUser.js"></script>
 
 </html>

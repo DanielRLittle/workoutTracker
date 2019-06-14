@@ -20,11 +20,17 @@ function createUserPage() {
 
 function afterUpdateUser() {
     document.getElementById("redirectAfterUpdate").innerHTML = "A fresh login is required for your username to take effect, redirecting...";
-    timeout();
+    timeout(3000);
 }
 
-function timeout(){
+function afterDeleteUser() {
+    document.getElementById("redirectAfterUpdate").innerHTML = "Account has been deleted, redirecting...";
+    timeout(2000);
+}
+
+
+function timeout(int){
     setTimeout(() => {
         mainMenu();    
-        }, 3000);  
+        }, int);  
 }
