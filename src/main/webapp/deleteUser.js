@@ -7,6 +7,7 @@ function deleteUser() {
 
 function confirmDeleteUser() {
     let output = window.sessionStorage.getItem("User");
+    output = JSON.parse(output);
     requestData(urlById, "DELETE", "");
     afterDeleteUser();
 }
