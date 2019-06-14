@@ -24,7 +24,7 @@ function getUser() {
 }
 
 function displayUser() {
-    // document.getElementById("userTable").style.display="inline";
+    document.getElementById("userTable").style.visibility="visible";
     document.getElementById("returningID").innerText = output.id;
     document.getElementById("firstName").innerText = output.firstName;
     document.getElementById("lastName").innerText = output.lastName;
@@ -44,7 +44,8 @@ function checkAndDisplay() {
 }
 
 function hideData() {
-    document.getElementById("returningID").innerHTML = "";
-    document.getElementById("firstName").innerHTML = "";
-    document.getElementById("lastName").innerHTML = "";
+    document.getElementById("userTable").style.visibility="hidden";
+    // document.getElementById("returningID").innerHTML = "";
+    // document.getElementById("firstName").innerHTML = "";
+    // document.getElementById("lastName").innerHTML = "";
 }
