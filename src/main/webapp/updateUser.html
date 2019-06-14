@@ -12,25 +12,25 @@
 <body class="bg-dark">
 	<div>
 		<button type="button" class="btn btn-outline-dark bg-info mediumButton" onclick="mainMenu()">Main Menu</button>
+		<button type="button" class="btn btn-outline-dark bg-info mediumButton" onclick="userPage()">Back to your User</button>
 	</div>
-
 	<div align="center" class="header">
 		<h1>Enter a Username:</h1>
 	</div>
-	<div align="center" class="createUserInput">
-		<input id="input1" style="width:30%; height:7%" type="text" class="createUserInputInner">First Name</input>
-	</div>
-	<div align="center" class="createUserInput">
-		<input id="input2" style="width:30%; height:7%" type="text" class="createUserInputInner">Last Name</input>
-	</div>
-	<div align="center">
-		<button type="button" class="btn btn-outline-dark bg-info largeButton" onclick="createUser();">Create</button>
-	</div>
+		<div align="center" class="createUserInput">
+			<input id="input1" style="width:30%; height:7%" type="text" class="createUserInputInner" placeholder="Enter your first name"></input>
+		</div>
+		<div align="center" class="createUserInput">
+			<input id="input2" style="width:30%; height:7%" type="text" class="createUserInputInner" placeholder="Enter your last name"></input>
+		</div>
+		<div align="center">
+			<button type="button" class="btn-outline-dark bg-info largeButton" onclick="updateUser()">Update Username</button>
+
+		</div>
 </body>
 
 <script src="fetchingData.js"></script>
-<script src="UserClass.js"></script>
-<script src="CreateUser.js"></script>
+<script src="updateUser.js"></script>
 <script src="extraButtonFunctions.js"></script>
 
 </html>

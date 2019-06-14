@@ -5,3 +5,19 @@
     font-size: 30px;
     border: 2px solid darkblue;
 }
+
+.fatButton {
+    margin: 2%;
+    width: 20%;
+    height: 8%;
+    font-size: 30px;
+    border: 2px solid darkblue;
+}
+
+.mediumButton {
+    margin: 1%;
+    width: 15%;
+    height: 5%;
+    font-size: 22px;
+    border: 2px solid darkblue;
+}

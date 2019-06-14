@@ -1,5 +1,5 @@
-const getUserPage = "http://35.242.137.2:8080/workoutTracker-1.0/userPage.html"
-const getLoginPage = "http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html"
+const getUserPage = "./userPage.html"
+const getLoginPage = "./loginPage.html"
     
 let output = window.sessionStorage.getItem("User");
 output = JSON.parse(output);
