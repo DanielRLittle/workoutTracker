@@ -18,6 +18,11 @@ function createUserPage() {
     window.location.href = './createUser.html';
 }
 
+function loginFromCreate() {
+    document.getElementById("hidingButton").style.display = "none";
+    window.location.href = './loginPage.html';
+}
+
 function afterUpdateUser() {
     document.getElementById("redirectAfterUpdate").innerHTML = "A fresh login is required for your username to take effect, redirecting...";
     timeout(3000);
@@ -29,8 +34,8 @@ function afterDeleteUser() {
 }
 
 
-function timeout(int){
+function timeout(int) {
     setTimeout(() => {
-        mainMenu();    
-        }, int);  
+        mainMenu();
+    }, int);
 }
