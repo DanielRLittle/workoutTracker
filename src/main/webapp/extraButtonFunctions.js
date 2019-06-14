@@ -6,7 +6,7 @@ function userPage() {
     window.location.href = './userPage.html';
 }
 
-function updateUser() {
+function updateUserPage() {
     window.location.href = './updateUser.html';
 }
 
