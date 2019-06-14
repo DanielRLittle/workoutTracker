@@ -39,7 +39,8 @@ public class UserRepoDB implements UserRepo{
 		user.setAll(newUser);
 		return user;
 	}
-
+	
+	@Transactional(value = TxType.REQUIRED)
 	public void deleteUser(int id) {
 		em.remove(readUser(id));
 	}

@@ -18,14 +18,16 @@
 		<h1>Enter a Username:</h1>
 	</div>
 	<div align="center" class="createUserInput">
-		<input id="input1" style="width:30%; height:7%" type="text" class="createUserInputInner">First Name</input>
+		<input id="input1" style="width:30%; height:7%" type="text" class="createUserInputInner" placeholder="Enter your first name"></input>
 	</div>
 	<div align="center" class="createUserInput">
-		<input id="input2" style="width:30%; height:7%" type="text" class="createUserInputInner">Last Name</input>
+		<input id="input2" style="width:30%; height:7%" type="text" class="createUserInputInner" placeholder="Enter your last name"></input>
 	</div>
 	<div align="center">
 		<button type="button" class="btn btn-outline-dark bg-info largeButton" onclick="createUser();">Create</button>
 	</div>
+	<div align="center">
+		<button type="button" id="hidingButton" class="btn btn-outline-dark bg-info largeButton" onclick="loginFromCreate();">Go to Login</button>
 </body>
 
 <script src="fetchingData.js"></script>

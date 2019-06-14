@@ -8,5 +8,6 @@ function createUser() {
     }
     else {
         console.log("Can't send a blank name!");
-    } 
+    }
+    document.getElementById("hidingButton").style.display = "block"; 
 }
