@@ -1,5 +1,0 @@
-com\qa\rest\JAXRSConfig.class
-com\qa\model\User.class
-com\qa\repository\UserRepo.class
-com\qa\rest\UserEndPoints.class
-com\qa\repository\UserRepoDB.class

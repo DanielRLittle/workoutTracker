@@ -68,19 +68,7 @@ public class UserEndPoints {
 		if (ur.readUser(id).equals(null)){
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		User user2 = ur.updateFirstName(id, user);
-		return Response.ok(user2).build();
-	}
-	
-	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes({"application/json"})
-	@Path("/users/{id}")
-	public Response alterLastName(User user, @PathParam("id") int id) {
-		if (ur.readUser(id).equals(null)){
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		User user2 = ur.updateLastName(id, user);
+		User user2 = ur.updateUser(id, user);
 		return Response.ok(user2).build();
 	}
 	

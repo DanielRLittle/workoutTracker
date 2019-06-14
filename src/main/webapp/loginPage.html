@@ -6,22 +6,30 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" type=text/css href="createUser.css">
 	<link rel="stylesheet" type=text/css href="frontpage.css">
+	<link rel="stylesheet" type=text/css href="buttons.css">
 </head>
+
 <body class="bg-dark">
+	<div>
+		<button type="button" class="btn btn-outline-dark bg-info mediumButton" onclick="mainMenu()">Main Menu</button>
+	</div>
 	<div align="center" class="header">
 		<h1>Enter a Username:</h1>
 	</div>
-	<div align="center" class="createUserInput">
-		<input  style="width:30%; height:7%" type="text" class="createUserInputInner">First Name</input>
-	</div>
-	<div align="center" class="createUserInput">
-		<input style="width:30%; height:7%" type="text" class="createUserInputInner">Last Name</input>
-	</div>
-	<div align="center">
-		<button type="button" class="btn btn-outline-dark bg-info large buttonCreateUser" style="width:30%; height: 10%">Login</button>
-	</div>
+		<div align="center" class="createUserInput">
+			<input id="input1" style="width:30%; height:7%" type="text" class="createUserInputInner" placeholder="Enter your first name"></input>
+		</div>
+		<div align="center" class="createUserInput">
+			<input id="input2" style="width:30%; height:7%" type="text" class="createUserInputInner" placeholder="Enter your last name"></input>
+		</div>
+		<div align="center">
+			<button type="button" class="btn-outline-dark bg-info largeButton" onclick="getUser();">Login</button>
+
+		</div>
 </body>
 
 <script src="fetchingData.js"></script>
+<script src="GetUser.js"></script>
+<script src="extraButtonFunctions.js"></script>
 
 </html>
