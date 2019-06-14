@@ -23,7 +23,7 @@ public class User {
 	
 	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@JoinColumn(name = "userForeignKey")
-	Set<Workout> workouts = new HashSet<Workout>(null);
+	Set<Workout> workouts = new HashSet<Workout>();
 	
 	public int getId() {
 		return id;
