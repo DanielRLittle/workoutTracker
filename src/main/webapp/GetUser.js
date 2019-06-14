@@ -47,4 +47,4 @@ function hideData() {
     document.getElementById("userTable").style.visibility="hidden";
 }
 
-hideDat();
+hideData();
