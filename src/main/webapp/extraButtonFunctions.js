@@ -17,3 +17,14 @@ function loginPage() {
 function createUserPage() {
     window.location.href = './createUser.html';
 }
+
+function afterUpdateUser() {
+    document.getElementById("redirectAfterUpdate").innerHTML = "A fresh login is required for your username to take effect, redirecting...";
+    timeout();
+}
+
+function timeout(){
+    setTimeout(() => {
+        mainMenu();    
+        }, 3000);  
+}

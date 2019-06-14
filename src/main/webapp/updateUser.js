@@ -14,4 +14,5 @@ function updateUser() {
     else {
         console.log("Can't change to a blank name!");
     }
+    afterUpdateUser();
 }
