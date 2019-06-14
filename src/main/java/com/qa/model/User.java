@@ -21,7 +21,7 @@ public class User {
 	String firstName;
 	String lastName;
 	
-	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "userForeignKey")
 	Set<Workout> workouts = new HashSet<Workout>();
 	
