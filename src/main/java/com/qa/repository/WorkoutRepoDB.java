@@ -19,7 +19,6 @@ public class WorkoutRepoDB implements WorkoutRepo{
 	@Transactional(value = TxType.REQUIRED)
 	public User createWorkout(Workout workout, int id) {
 		User user = em.find(User.class, id);
-		user.getWorkouts().add(workout);
 		return user;
 	}
 

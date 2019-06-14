@@ -41,12 +41,12 @@ public class UserEndPoints {
 	@GET
 	@Path("/users/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getOneUser(@PathParam("id") int id) {
-		if (ur.readUser(id).equals(null)) {
-			return Response.status(Status.NOT_FOUND).build();
-		}
+	public User getOneUser(@PathParam("id") int id) {
 		User user = ur.readUser(id);
-		return Response.ok(user).build();
+		if (user == null) {
+			return null;
+		}
+		return user;
 	}
 	
 	@POST
