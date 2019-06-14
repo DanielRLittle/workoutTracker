@@ -24,5 +24,9 @@ public class Workout {
 	}
 	public void setWorkoutName(String workoutName) {
 		this.workoutName = workoutName;
-	}	
+	}
+	
+	public void setAll(Workout newWorkout) {
+		this.workoutName = newWorkout.workoutName;
+	}
 }

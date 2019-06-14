@@ -1,6 +1,7 @@
 package com.qa.model;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -22,7 +23,6 @@ public class User {
 	
 	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@JoinColumn(name = "userForeignKey")
-	
 	Set<Workout> workouts = new HashSet<Workout>();
 	
 	public int getId() {
@@ -47,6 +47,10 @@ public class User {
 	public void setAll(User newUser) {
 		this.firstName = newUser.firstName;
 		this.lastName = newUser.lastName;
+	}
+	
+	public Set<Workout> getWorkouts() {
+		return workouts;
 	}
 }
 

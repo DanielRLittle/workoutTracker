@@ -2,11 +2,12 @@ package com.qa.repository;
 
 import java.util.List;
 
+import com.qa.model.User;
 import com.qa.model.Workout;
 
-public interface workoutRepo {
+public interface WorkoutRepo {
 
-	public Workout createWorkout(Workout workout);
+	public User createWorkout(Workout workout, int id);
 
 	public Workout readWorkout(int id);
 
