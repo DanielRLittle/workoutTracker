@@ -16,6 +16,6 @@ function createUser() {
 
 function createdText() {
     document.getElementById("success").innerText = "User successfully created!";
-    textTime(2000, "success");
+    textTime(3000, "success");
 }
 
