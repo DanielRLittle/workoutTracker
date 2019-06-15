@@ -1,4 +1,4 @@
-package com.qa.seleniumCreate;
+package com.qa.seleniumCRUD;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
