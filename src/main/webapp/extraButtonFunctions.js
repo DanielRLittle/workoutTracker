@@ -23,9 +23,13 @@ function loginFromCreate() {
     window.location.href = './loginPage.html';
 }
 
-function afterUpdateUser() {
+function redirectUser() {
     document.getElementById("redirectAfterUpdate").innerHTML = "A fresh login is required for your username to take effect, redirecting...";
-    timeout(3000);
+    timeout(2500);
+}
+
+function userRemain() {
+    document.getElementById("remain").innerHTML = "Cannot enter a blank name!";
 }
 
 function afterDeleteUser() {
