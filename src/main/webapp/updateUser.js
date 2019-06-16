@@ -10,9 +10,11 @@ function updateUser() {
         output.firstName = input1;
         output.lastName = input2;
         requestData(urlById, "PUT", output);
+        redirectUser();
     }
     else {
         console.log("Can't change to a blank name!");
+        userRemain();
     }
-    afterUpdateUser();
+    
 }
