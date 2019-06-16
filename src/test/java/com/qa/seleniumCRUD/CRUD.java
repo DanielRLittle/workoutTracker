@@ -18,11 +18,13 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CRUD {
+	
+	// Do not run tests from this class, use the runner class to edit the tests required
 
 WebDriver driver;
 Actions action;
-String fName = "xxx";
-String lName = "yyy";	
+String fName = "Hello";
+String lName = "Goodbye";	
 
 
 	@Before
@@ -63,7 +65,7 @@ String lName = "yyy";
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[2]"))).click().perform();
 		String nameDisplayed = usPage.findDetails();
 		
-		assertEquals("xxxyyy", nameDisplayed);
+		assertEquals(fName+lName, nameDisplayed);
 	}
 	
 	@Test
@@ -124,29 +126,54 @@ String lName = "yyy";
 	
 	@Test
 	@Category(Cat3.class)
-	public void stage5_deleteFuncYes() {
+	public void stage6_deleteFuncYes() {
 		
 		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
-		UserLandingPage usPage = PageFactory.initElements(driver, UserLandingPage.class);
 		DeletePage dPage = PageFactory.initElements(driver, DeletePage.class);
 		HomePage hPage = PageFactory.initElements(driver, HomePage.class);
 		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
 		
 		loPage.typeName(fName, lName);
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
-		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
 		
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[5]"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
 		
-		action.moveToElement(driver.findElement(By.xpath("/html/body/div[2]/button")));
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[2]/button"))).click().perform();
 		String deleteConfirmation = dPage.deleteMessage();
 		driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
 		
 		String redirected = hPage.findHomePage();
 		
-		assertEquals("", deleteConfirmation);
-		assertEquals("", redirected);
+		assertEquals("Account has been deleted, redirecting...", deleteConfirmation);
+		assertEquals("Track Your Workouts!", redirected);
 		
+		
+	}
+	
+	@Test
+	@Category(Cat3.class)
+	public void stage5_deleteFunctionNo() {
+		
+		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
+		UserLandingPage usPage = PageFactory.initElements(driver, UserLandingPage.class);
+		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
+		
+		loPage.typeName(fName, lName);
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
+		
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[5]"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
+		
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[4]/button"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[2]"))).click().perform();
+		String nameDisplayed = usPage.findDetails();
+		
+		assertEquals(fName+lName, nameDisplayed);
 		
 	}
 }

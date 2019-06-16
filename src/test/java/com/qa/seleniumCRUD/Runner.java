@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Categories.class)
-@IncludeCategory({Cat1.class, Cat3.class})
-@ExcludeCategory({})
+//@IncludeCategory({Cat1.class, Cat3.class})
+@ExcludeCategory({Cat4.class})
 @SuiteClasses({CRUD.class})
 public class Runner {
 	
