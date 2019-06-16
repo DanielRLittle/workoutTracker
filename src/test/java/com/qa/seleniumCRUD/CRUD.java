@@ -25,6 +25,8 @@ WebDriver driver;
 Actions action;
 String fName = "Hello";
 String lName = "Goodbye";	
+String newFName = null;
+String newLName = null;
 
 
 	@Before
@@ -71,8 +73,8 @@ String lName = "Goodbye";
 	@Test
 	@Category(Cat4.class)
 	public void stage4_TestUpdateFuncSuccess() {
-		String newFName = lName;
-		String newLName = fName;
+		newFName = lName;
+		newLName = fName;
 		
 		UpdatePage upPage = PageFactory.initElements(driver, UpdatePage.class);
 		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
@@ -94,13 +96,15 @@ String lName = "Goodbye";
 		
 		assertEquals("A fresh login is required for your username to take effect, redirecting...", confirmedUpdate);
 		assertEquals("Track Your Workouts!", redirected);
+		
 	}
 	
 	@Test
 	@Category(Cat5.class)
 	public void stage3_TestUpdateFuncFail() {
-		String newFName = "";
-		String newLName = "";
+		
+		String newerFName = "";
+		String newerLName = "";
 		
 		UpdatePage upPage = PageFactory.initElements(driver, UpdatePage.class);
 		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
@@ -113,7 +117,7 @@ String lName = "Goodbye";
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[4]"))).click().perform();
 		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
 		
-		upPage.typeName(newFName, newLName);
+		upPage.typeName(newerFName, newerLName);
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
 		
 		String failedUpdate = upPage.updateRejected();
@@ -127,13 +131,13 @@ String lName = "Goodbye";
 	@Test
 	@Category(Cat3.class)
 	public void stage6_deleteFuncYes() {
-		
+
 		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
 		DeletePage dPage = PageFactory.initElements(driver, DeletePage.class);
 		HomePage hPage = PageFactory.initElements(driver, HomePage.class);
 		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
 		
-		loPage.typeName(fName, lName);
+		loPage.typeName(lName, fName);
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
 		driver.manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
 		
@@ -160,7 +164,7 @@ String lName = "Goodbye";
 		UserLandingPage usPage = PageFactory.initElements(driver, UserLandingPage.class);
 		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
 		
-		loPage.typeName(fName, lName);
+		loPage.typeName(lName, fName);
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
 		driver.manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
 		
@@ -173,7 +177,7 @@ String lName = "Goodbye";
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[2]"))).click().perform();
 		String nameDisplayed = usPage.findDetails();
 		
-		assertEquals(fName+lName, nameDisplayed);
+		assertEquals(lName+fName, nameDisplayed);
 		
 	}
 }
