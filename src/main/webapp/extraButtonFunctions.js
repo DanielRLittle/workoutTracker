@@ -39,3 +39,9 @@ function timeout(int) {
         mainMenu();
     }, int);
 }
+
+function textTime(int, id) {
+    setTimeout(() => {
+        document.getElementById(id).innerText = "";
+    }, int);
+}
