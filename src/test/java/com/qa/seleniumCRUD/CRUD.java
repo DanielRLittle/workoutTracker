@@ -117,7 +117,7 @@ Actions action;
 		String remained = upPage.findHeader();
 		
 		assertEquals("Cannot enter a blank name!", failedUpdate);
-		assertEquals("", remained);
+		assertEquals("Enter a Username:", remained);
 		
 	}
 }
