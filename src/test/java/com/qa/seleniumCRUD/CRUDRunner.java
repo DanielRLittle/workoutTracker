@@ -10,6 +10,6 @@ import org.junit.runners.Suite.SuiteClasses;
 @IncludeCategory({Cat1.class, Cat2.class, Cat3.class, Cat4.class, Cat5.class})
 @ExcludeCategory({})
 @SuiteClasses({CRUD.class})
-public class Runner {
+public class CRUDRunner {
 	
 }
