@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
 
-	@FindBy(xpath = "/html/body/div[1]/h1")
+	@FindBy(id = "frontPageHeader")
 	private WebElement title;
 	
 	public String findHomePage() {

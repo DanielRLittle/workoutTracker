@@ -21,12 +21,16 @@ public class CRUD {
 
 WebDriver driver;
 Actions action;
-	
+String fName = "xxx";
+String lName = "yyy";	
+
+
 	@Before
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/Daniel Little/chromedriver.exe");
 		driver = new ChromeDriver();
 		action = new Actions(driver);
+		
 	}
 	
 	@After
@@ -39,7 +43,7 @@ Actions action;
 	public void stage1_TestCreateFunc() {
 		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/createUser.html");
 		CreateLandingPage laPage = PageFactory.initElements(driver, CreateLandingPage.class);
-		laPage.typeName("xxx", "yyy");
+		laPage.typeName(fName, lName);
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
 		String confirmed = laPage.confirmationText();
 		assertEquals("User successfully created!", confirmed);
@@ -50,11 +54,12 @@ Actions action;
 	public void stage2_TestGetFunc() {
 		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
 		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
-		loPage.typeName("xxx", "yyy");
+		UserLandingPage usPage = PageFactory.initElements(driver, UserLandingPage.class);
+		
+		loPage.typeName(fName, lName);
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
 		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
 		
-		UserLandingPage usPage = PageFactory.initElements(driver, UserLandingPage.class);
 		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[2]"))).click().perform();
 		String nameDisplayed = usPage.findDetails();
 		
@@ -63,9 +68,7 @@ Actions action;
 	
 	@Test
 	@Category(Cat4.class)
-	public void stage3_TestUpdateFuncSuccess() {
-		String fName = "xxx";
-		String lName = "yyy";
+	public void stage4_TestUpdateFuncSuccess() {
 		String newFName = lName;
 		String newLName = fName;
 		
@@ -94,8 +97,6 @@ Actions action;
 	@Test
 	@Category(Cat5.class)
 	public void stage3_TestUpdateFuncFail() {
-		String fName = "xxx";
-		String lName = "yyy";
 		String newFName = "";
 		String newLName = "";
 		
@@ -118,6 +119,34 @@ Actions action;
 		
 		assertEquals("Cannot enter a blank name!", failedUpdate);
 		assertEquals("Enter a Username:", remained);
+		
+	}
+	
+	@Test
+	@Category(Cat3.class)
+	public void stage5_deleteFuncYes() {
+		
+		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
+		UserLandingPage usPage = PageFactory.initElements(driver, UserLandingPage.class);
+		DeletePage dPage = PageFactory.initElements(driver, DeletePage.class);
+		HomePage hPage = PageFactory.initElements(driver, HomePage.class);
+		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
+		
+		loPage.typeName(fName, lName);
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[5]"))).click().perform();
+		
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[2]/button")));
+		String deleteConfirmation = dPage.deleteMessage();
+		driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
+		
+		String redirected = hPage.findHomePage();
+		
+		assertEquals("", deleteConfirmation);
+		assertEquals("", redirected);
+		
 		
 	}
 }
