@@ -47,7 +47,7 @@ Actions action;
 	
 	@Test
 	@Category(Cat2.class)
-	public void stage2_TestGetFunc() throws InterruptedException {
+	public void stage2_TestGetFunc() {
 		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
 		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
 		loPage.typeName("xxx", "yyy");
@@ -59,5 +59,65 @@ Actions action;
 		String nameDisplayed = usPage.findDetails();
 		
 		assertEquals("xxxyyy", nameDisplayed);
+	}
+	
+	@Test
+	@Category(Cat4.class)
+	public void stage3_TestUpdateFuncSuccess() {
+		String fName = "xxx";
+		String lName = "yyy";
+		String newFName = lName;
+		String newLName = fName;
+		
+		UpdatePage upPage = PageFactory.initElements(driver, UpdatePage.class);
+		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
+		HomePage hPage = PageFactory.initElements(driver, HomePage.class);
+		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
+		
+		loPage.typeName(fName, lName);
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1l, TimeUnit.SECONDS);
+		
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[4]"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		
+		upPage.typeName(newFName, newLName);
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
+		String confirmedUpdate = upPage.updateConfirmation();
+		driver.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
+		String redirected = hPage.findHomePage();
+		
+		assertEquals("A fresh login is required for your username to take effect, redirecting...", confirmedUpdate);
+		assertEquals("Track Your Workouts!", redirected);
+	}
+	
+	@Test
+	@Category(Cat5.class)
+	public void stage3_TestUpdateFuncFail() {
+		String fName = "xxx";
+		String lName = "yyy";
+		String newFName = "";
+		String newLName = "";
+		
+		UpdatePage upPage = PageFactory.initElements(driver, UpdatePage.class);
+		LoginPage loPage = PageFactory.initElements(driver, LoginPage.class);
+		driver.get("http://35.242.137.2:8080/workoutTracker-1.0/loginPage.html");
+		
+		loPage.typeName(fName, lName);
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1l, TimeUnit.SECONDS);
+		
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/button[4]"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		
+		upPage.typeName(newFName, newLName);
+		action.moveToElement(driver.findElement(By.xpath("/html/body/div[5]/button"))).click().perform();
+		
+		String failedUpdate = upPage.updateRejected();
+		String remained = upPage.findHeader();
+		
+		assertEquals("Cannot enter a blank name!", failedUpdate);
+		assertEquals("", remained);
+		
 	}
 }
