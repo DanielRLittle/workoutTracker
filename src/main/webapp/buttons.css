@@ -1,32 +1,32 @@
 .largestButton {
-    margin: 2%;
+    margin: 1%;
     width: 80%;
-    height: 15%;
+    height: 3.5em;
     border-radius: 10em;
 }
 
 .largeButton {
     margin: 2%;
-    width: 25%;
-    height: 7%;
+    width: 15em;
+    height: 2.3em;
     font-size: 30px;
     border: 2px solid darkblue;
     border-radius:2em;
 }
 
 .fatButton {
-    margin: 2%;
-    width: 15%;
-    height: 8%;
-    font-size: 30px;
+    margin: 1%;
+    width: 12em;
+    height: 4em;
+    font-size: 25px;
     border: 2px solid darkblue;
     border-radius: 2em;
 }
 
 .mediumButton {
     margin: 1%;
-    width: 15%;
-    height: 5%;
+    width: 10em;
+    height: 3.2em;
     font-size: 22px;
     border: 2px solid darkblue;
     border-radius: 2em;
