@@ -7,15 +7,18 @@
     <link rel="stylesheet" type=text/css href="buttons.css">
     <link rel="stylesheet" type=text/css href="textEditing.css">
     <link rel="stylesheet" type=text/css href="tableFormat.css">
+    <link rel="stylesheet" type=text/css href="userPage.css">
 </head>
 
 <body class="bg-dark">
-    <div align="center">
-		<button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="mainMenu();">Main Menu</button>
-        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="checkAndDisplay();">Reveal User Info</button>
-        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="hideData();">Hide User Info</button>
-        <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="updateUserPage();">Update Username</button>
-        <button type="button" class="fatButton btn btn-outline-dark bg-danger" onclick="deleteUser();">Delete User</button>
+    <div align="center" class="bg-secondary">
+        <div class="divBorder">
+            <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="mainMenu();">Main Menu</button>
+            <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="checkAndDisplay();">Reveal User Info</button>
+            <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="hideData();">Hide User Info</button>
+            <button type="button" class="fatButton btn btn-outline-dark bg-info" onclick="updateUserPage();">Update Username</button>
+            <button type="button" class="fatButton btn btn-outline-dark bg-danger" onclick="deleteUser();">Delete User</button>
+        </div>
     </div>
     <div>
         <table align="center" id="userTable" class="table table-dark mediumText">
